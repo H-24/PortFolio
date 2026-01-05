@@ -197,3 +197,47 @@ section .about-self .right p{
 section .about-self .right .social a{
     font-size: 2rem;
 }
+
+section .do{
+    display: flex;
+}
+
+section .do .do-inner{
+    background-color: #fff;
+    width: 30%;
+    padding: 2rem;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+/* 마지막 박스의 외부 여백 설정 */
+section .do .do-inner:last-child{
+    margin-right: 0;
+}
+
+section .do .do-inner .icon i{
+    font-size: 2.5rem;
+    color: #ff6a6a;
+    margin-left: -8px
+}
+
+section .do .do-inner .content h3{
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+section .do .do-inner .content p{
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 마우스를 올리면 배경색과 텍스트 색상 변경 */
+section .do .do-inner:hover{
+    background-color: lightcoral;
+    color: white;
+}
+
+/* 마우스를 올리면 아이콘 폰트 색상 변경 */
+section .do .do-inner:hover i{
+    color: white;
+}
