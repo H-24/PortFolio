@@ -346,3 +346,97 @@ section .contact-box .right button{
     border: none;
     color: white
 }
+
+/* container width가 1140px이므로 기준해상도를 1140px부터 시작한다 */
+/* 화면 너비가 1140px 이하일 때 */
+@media screen and (max-width:1140px) {
+    main .container{
+        width: 992px;
+    }
+    /* 2단으로 처리하기 위한 적정너비 */
+    section .container{
+        width: 600px;
+    }
+    /* about me 왼쪽, 오른쪽 영역 너비 50% -> 100%로 변경 */
+    section .about-self .left{
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    section .about-self .right{
+        width: 100%;
+        padding: 0;
+    }
+    section .portfolio-box{
+        grid-template-columns: repeat(2,1fr);
+    }
+    section .contact-box{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    section .contact-box .left{
+        width: 100%;
+    }
+    section .contact-box .right {
+        width: 100%;
+        margin-left: 0;
+    }
+
+}
+/* 화면 너비가 992px 이하일 때 */
+@media screen and (max-width:992px) {
+    /* font-size 속성값이 14px가 되므로 1rem = 14px가 됨 */
+    html{font-size: 14px;}
+    main .container{
+        width: 768px;
+    }
+}
+/* 화면 너비가 768px 이하일 때 */
+@media screen and (max-width:768px) {
+    html{font-size: 13px;}    
+    main .container {
+        width: 576px;
+    }
+    section .container{
+        width: 400px;
+    }
+    section .do {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    section .do .do-inner{
+        width: 100%;
+        margin-bottom: 2rem;
+        margin-right: 0;
+    }
+    section .portfolio-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem 3rem;
+    }
+}
+/* 화면 너비가 576px 이하일 때 */
+@media screen and (max-width:576px) {
+    html{font-size: 12px;}
+    main .container {
+        width: 400px;
+    }
+    section .container{
+        width: 360px;
+    }
+}
+/* 화면 너비가 400px 이하일 때 */
+@media screen and (max-width:400px) {
+    html{font-size: 11px;}
+    main .container {
+        width: 320px;
+    }
+    section .container{
+        width: 320px;
+    }
+    main h4{
+        font-size: 1.5rem;
+    }
+    section .title h2{
+        font-size: 3rem;   
+    }
+}
