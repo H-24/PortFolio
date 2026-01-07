@@ -241,3 +241,35 @@ section .do .do-inner:hover{
 section .do .do-inner:hover i{
     color: white;
 }
+
+
+/* portfolio 섹션 */
+section .portfolio-box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3% 4.5%;
+}
+
+section .portfolio-box .portfolio-inner{
+    width: 100%;
+    padding:1rem 1rem 1.5rem 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+section .portfolio-box .portfolio-inner img{
+    width: 100%;
+    height: 200px;
+    display: block;
+}
+
+section .portfolio-box .portfolio-inner strong{
+    color: #ff6a6a;
+    margin: 0.5rem 0;
+    display: block;
+}
+
+section .portfolio-box .portfolio-inner h3{
+    font-size: 1.75rem;
+}
+
