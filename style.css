@@ -350,6 +350,8 @@ section .contact-box .right button{
 /* container width가 1140px이므로 기준해상도를 1140px부터 시작한다 */
 /* 화면 너비가 1140px 이하일 때 */
 @media screen and (max-width:1140px) {
+    html{font-size: 15px;}
+
     main .container{
         width: 992px;
     }
