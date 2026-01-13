@@ -40,3 +40,23 @@ function scrollCheck(){
         headerEl.classList.remove("active");
     }
 }
+
+/* 애니메이션 스크롤 이동 */
+const animationMove = function(selector){
+    // 1) selector 매개변수로 이동할 대상 요소 노드 가져오기
+    const targetEl = document.querySelector(selector);
+    // 2) 현재 웹 브라우저의 스크롤 정보(y값)
+    const browserScrollY = window.pageYOffset;
+    // 3) 이동할 대상의 위치(y값)
+    const targetScrollY = targetEl.getBoundingClientRect().top + browserScrollY; // getBoundingClientRect().top - 뷰포트 기준으로 대상의 top위치 이므로 현재 사용자의 view 즉 스크롤한 정도를 더해주어야함
+    // 4) 스크롤 이동 
+    window.scrollTo({top: targetScrollY, behavior: 'smooth'});
+};
+
+// 스크롤 이벤트 연결
+const scrollMoveEl = document.querySelectorAll("[data-animation-scroll='true']");
+scrollMoveEl.forEach(el => {
+    el.addEventListener('click', e => {
+        animationMove(el.dataset.target);
+    });
+});
