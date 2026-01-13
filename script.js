@@ -1,6 +1,6 @@
 (function(){
     const spanEl = document.querySelector("main h2 span");
-    const txtArr = ['Web Publisher', 'Front-End Developer', 'Web UI Designer', 'UX Designer', "Back-End Developer"];
+    const txtArr = ['Web Publisher', 'Front-End Developer', 'Web UI Designer', 'UX Designer', 'Back-End Developer'];
     let index = 0;
     let currentTxt = txtArr[index].split(""); 
     function writeTxt() {
@@ -21,7 +21,22 @@
             index = (index+1) % txtArr.length;
             currentTxt = txtArr[index].split("");
             console.log(currentTxt);
+            writeTxt();
         }
     }
     writeTxt();
 })();
+
+/* 수직 스크롤이 발생하면 header 태그에 active 클래스 추가 및 삭제 */
+const headerEl = document.querySelector("header");
+window.addEventListener('scroll', function(){
+    requestAnimationFrame(scrollCheck); /* 스크롤처럼 이벤트가 너무 많이 발생할때 사용 1프레임당 한번(1초에 최대 60번)만 실행 */
+});
+function scrollCheck(){
+    let browserScrollY = window.scroll ? window.scrollY : window.pageYOffset;
+    if(browserScrollY > 0){
+        headerEl.classList.add("active");
+    }else{
+        headerEl.classList.remove("active");
+    }
+}
